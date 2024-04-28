@@ -15,5 +15,3 @@ pillow==9.0.1
 ```
 3. Run the Flask application: `python3 main.py` in terminal from project directory
 4. Open the web application in your browser on localhost.
-
-## Results
