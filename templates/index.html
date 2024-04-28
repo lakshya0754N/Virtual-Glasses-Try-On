@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Glasses Try-On</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="mt-5">Virtual Glasses Try-On</h1>
+                <form method="post" action="{{ url_for('tasks') }}">
+                    <input type="submit" value="Capture" name="click"/>
+                    <input type="submit" value="Negative" name="neg" />
+                    <input type="submit" value="Try On" name="face" />
+                </form>
+                <form method="post" action="{{ url_for('model_func') }}">
+                    <input type="submit" value="Harr Cascade" name="haar"/>
+                    <input type="submit" value="Resnet18" name="dl" />
+                </form>
+                <img src="{{ url_for('video_feed') }}" height="80%">
+                <h3 style="font-family:courier;">Choose Glass to try-on:</h3>
+                <form method="post" action="{{ url_for('glass') }}">
+                    <button >
+                        <img src="{{ url_for('static', filename='images/glass0.png') }}" height="120" width="120">
+                        <input type="submit" value="Glass1" name="glass1" />
+                    </button>
+                    <button >
+                        <img src="{{ url_for('static', filename='images/glass1.png') }}" height="120" width="120">
+                        <input type="submit" value="Glass2" name="glass2" />
+                    </button>
+                    <button >
+                        <img src="{{ url_for('static', filename='images/glass2.png') }}" height="120" width="120">
+                        <input type="submit" value="Glass3" name="glass3" />
+                    </button>
+                    <button >
+                        <img src="{{ url_for('static', filename='images/glass3.png') }}" height="120" width="120">
+                        <input type="submit" value="Glass4" name="glass4" />
+                    </button>
+
+                </form>    
+                <h3 style="font-family:courier;">Instructions:</h3>
+                <ol style="font-family:courier;">
+                    <li>Capture--Take still-shot and save in the 'shots' directory</li>
+                    <li>Grey--Toggle between grayscale and RGB output</li>
+                    <li>Negative--Toggle between negative and RGB output</li>
+                    <li>Try On--Shows just your face if present(Toggle on/off)</li> 
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
