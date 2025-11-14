@@ -3,15 +3,9 @@ This project is a virtual glasses try-on system. It is a web application that al
 
 ## How to Run
 1. Clone the repository
-2. Run the below command to install the libraries:
+2. Run the below command to install the required libraries:
 ```bash
-flask==2.2.3
-opencv-python=4.5.4
-numpy==1.23.4
-torch==1.13.1
-torchvision==0.14.1
-pillow==9.0.1
-
+pip install -r requirements.txt
 ```
 3. Run the Flask application: `python3 main.py` in terminal from project directory
 4. Open the web application in your browser on localhost.
